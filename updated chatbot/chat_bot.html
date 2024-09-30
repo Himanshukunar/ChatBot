@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f5ff; /* Baby blue background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            margin-left: 400px;
+        }
+        #chat-container {
+            width: 900px;
+            background: #fff;
+			margin-right: 400px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative; /* Keep relative positioning for container elements */
+        }
+        #messages {
+            padding: 20px;
+            height: 400px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            white-space: pre-line;
+        }
+        .response {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        .user.response {
+            justify-content: flex-end;
+        }
+        .bot.response {
+            justify-content: flex-start;
+        }
+        .avatar, .bot-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 0 10px;
+        }
+        #user-input {
+    display: flex;
+    padding: 10px;
+    background: #e0e0e0;
+    align-items: center; /* Ensure vertical alignment of button and input */
+}
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+        #bot-image {
+            position: fixed;
+            width: 80px;
+            height: 80px;
+			margin-top:40px;
+            top: 20px; /* Adjust as needed */
+			margin-left: 480px;
+			z-index: 1000; /* Ensures the image is on top of other elements */
+        }
+		#send-button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue background */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#send-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#send-button:active {
+    transform: scale(0.98); /* Slightly shrink on click */
+}
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="messages"></div>
+        <div id="user-input">
+            <input type="text" id="input" placeholder="Say something..."> <!-- Placeholder text -->
+            <button id="send-button">Send</button> <!-- Add a send button -->
+        </div>
+    </div>
+    <img src="chatbot.png" id="bot-image" alt="Bot" /> <!-- Bot image outside the chatbot container -->
+    
+    <script src="index.js"></script>
+</body>
+</html>
